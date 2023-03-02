@@ -5,9 +5,9 @@ const config = require('../config');
  * Recursively removes duplicate objects from array properties
  * @param {Object} obj - Object to check
  * @param {Array<Object>} props - obj properties that should be checked
- * @param {Array<Object> props.name - obj property to parse
- * @param {String> props.filterBy - element property value that should be unique
- * @param {Array<Object> props.filterProps - extra element properties to check
+ * @param {String} props.name - obj property to parse
+ * @param {String>} props.filterBy - element property value that should be unique
+ * @param {Array<Object>} props.filterProps - extra element properties to check
  * @returns {Object} - Parsed object
  */
 const remove = (obj, props) => {
