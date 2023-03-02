@@ -2,7 +2,7 @@
 The purpose of this coding exercise is to create a Node.js application that can programmatically remove all duplicate fields and objects from the given mock application schema and output a new sanitized version.
 
 ## Requirements
-Please check original README file [here](requirements.md)
+Please check the original [README](requirements.md) file.
 
 ## Notes
 The following assumptions have been made:
@@ -16,9 +16,18 @@ The following assumptions have been made:
 * `schema.versions[\*].scenes[\*].views` is an array of objects
 * `schema.versions[\*].scenes[\*].views[\*].key` exists and is a scalar
 
-The main app is [src/index.js](src/index.js), by default it reads the schema from [data/mock_application.json](data/mock_application.json) and writes the sanitized version to `output/clean_application.json`.
+The main app is [src/index.js](src/index.js), by default it reads the schema from [data/mock_application.json](data/mock_application.json) and writes a sanitized version to `output/clean_application.json`.
 
 The parsing logic is in [src/lib/removeDuplicates.js](src/lib/removeDuplicates.js), it exports a single function which accepts a javascript object (the application schema) and optionally a filter object that overrides the default fields to be sanitized (as specified in the original [requirements](requirenents.md)).
+
+Unit tests have been written for this main function, but not for the application's CLI parsing / file handling.
+
+Possible next steps:
+* Implement an ApplicationSchema class that allows to:
+ * Read / write from different sources (object, ile, db, cache, etc)
+ * Configure the fields to be checked
+ * Validate the input schema against a JSON schema
+* Increase coverage of tests
 
 ## Usage
 Install dependencies
